@@ -3,6 +3,8 @@ const app=express()
 const mongoose=require("mongoose")
 const dotenv=require("dotenv").config()
 app.use(express.json())
+const cors=require("cors")
+app.use(cors())
 const dbconnnection=async()=>{
     try{
         const db=await mongoose.connect(process.env.MONGO_URI)
